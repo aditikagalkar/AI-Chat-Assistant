@@ -1,0 +1,11 @@
+{
+  "name": "Glam Gems Shop",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    }
+  },
+  "forwardPorts": [8080],
+  "postCreateCommand": "npm install"
+}
