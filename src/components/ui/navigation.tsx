@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ShoppingBag, Search, Menu, X, Heart, User } from "lucide-react";
+import { ShoppingBag, Search, Menu, X, Heart, User, MessageCircle } from "lucide-react";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,6 +41,9 @@ export const Navigation = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="ghost" size="sm">
               <Search className="h-5 w-5" />
+            </Button>
+            <Button variant="ghost" size="sm">
+              <MessageCircle className="h-5 w-5" />
             </Button>
             <Button variant="ghost" size="sm">
               <Heart className="h-5 w-5" />
@@ -92,6 +95,9 @@ export const Navigation = () => {
             <div className="flex space-x-4 px-3 py-2">
               <Button variant="ghost" size="sm">
                 <Search className="h-5 w-5" />
+              </Button>
+              <Button variant="ghost" size="sm">
+                <MessageCircle className="h-5 w-5" />
               </Button>
               <Button variant="ghost" size="sm">
                 <Heart className="h-5 w-5" />
