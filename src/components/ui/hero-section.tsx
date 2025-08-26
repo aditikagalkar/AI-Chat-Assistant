@@ -46,9 +46,9 @@ export const HeroSection = () => {
             </Button>
             
             <Button 
-              variant="outline" 
+              variant="overlay" 
               size="lg"
-              className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 transition-all duration-300"
+              className="px-8 py-4 transition-all duration-300"
             >
               Watch Campaign
             </Button>
