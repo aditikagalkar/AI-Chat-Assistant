@@ -4,17 +4,20 @@ import { ProductCard } from "@/components/ui/product-card";
 import { Button } from "@/components/ui/button";
 import { products } from "@/data/products";
 import { ArrowRight } from "lucide-react";
+import { AiChatWindow } from "@/components/ui/ai-chat-window";
+import { useState } from "react";
 
 const Index = () => {
   const featuredProducts = products.slice(0, 6);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-      
+      <Navigation  isChatOpen={isChatOpen} setIsChatOpen={setIsChatOpen} />
+
       <main>
         <HeroSection />
-        
+
         {/* Featured Products Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -26,19 +29,19 @@ const Index = () => {
                 </span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Discover our handpicked selection of luxury makeup essentials, 
+                Discover our handpicked selection of luxury makeup essentials,
                 curated by beauty experts for the modern woman.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               {featuredProducts.map((product) => (
                 <ProductCard key={product.id} {...product} />
               ))}
             </div>
-            
+
             <div className="text-center">
-              <Button 
+              <Button
                 size="lg"
                 className="bg-luxury-black hover:bg-luxury-black/90 text-white px-8 py-4 transition-all duration-300 hover:shadow-luxury group"
               >
@@ -56,7 +59,7 @@ const Index = () => {
               Stay in the Loop
             </h3>
             <p className="text-lg text-luxury-black/80 mb-8 max-w-2xl mx-auto">
-              Be the first to know about new arrivals, exclusive offers, and beauty tips 
+              Be the first to know about new arrivals, exclusive offers, and beauty tips
               from our experts.
             </p>
             <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-4">
@@ -73,6 +76,8 @@ const Index = () => {
         </section>
       </main>
 
+      {isChatOpen && <AiChatWindow isChatOpen={isChatOpen} setIsChatOpen={setIsChatOpen}/>}
+
       {/* Footer */}
       <footer className="bg-luxury-black text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,7 +90,7 @@ const Index = () => {
                 Redefining beauty with luxury makeup that celebrates your unique style.
               </p>
             </div>
-            
+
             <div>
               <h5 className="font-semibold mb-4">Quick Links</h5>
               <ul className="space-y-2 text-white/70">
@@ -95,7 +100,7 @@ const Index = () => {
                 <li><a href="#" className="hover:text-rose-gold transition-colors">Shipping</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h5 className="font-semibold mb-4">Categories</h5>
               <ul className="space-y-2 text-white/70">
@@ -105,7 +110,7 @@ const Index = () => {
                 <li><a href="#" className="hover:text-rose-gold transition-colors">Skincare</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h5 className="font-semibold mb-4">Follow Us</h5>
               <ul className="space-y-2 text-white/70">
@@ -116,7 +121,7 @@ const Index = () => {
               </ul>
             </div>
           </div>
-          
+
           <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
             <p>&copy; 2024 LUXE. All rights reserved.</p>
           </div>

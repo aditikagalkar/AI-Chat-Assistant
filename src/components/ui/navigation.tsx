@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ShoppingBag, Search, Menu, X, Heart, User, MessageCircle } from "lucide-react";
+import { AiChatWindow } from "@/components/ui/ai-chat-window"
 
-export const Navigation = () => {
+export const Navigation = ({ isChatOpen, setIsChatOpen }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <nav className="bg-background/95 backdrop-blur-md border-b border-border sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,7 +42,10 @@ export const Navigation = () => {
             <Button variant="ghost" size="sm">
               <Search className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="sm">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsChatOpen(true)}>
               <MessageCircle className="h-5 w-5" />
             </Button>
             <Button variant="ghost" size="sm">
@@ -96,7 +99,10 @@ export const Navigation = () => {
               <Button variant="ghost" size="sm">
                 <Search className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="sm">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsChatOpen(!true)}>
                 <MessageCircle className="h-5 w-5" />
               </Button>
               <Button variant="ghost" size="sm">
