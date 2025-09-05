@@ -5,9 +5,10 @@ For this example, we will be using a cosmetics website generated through **[Lova
 
 ## 🛠️ Tech Stack  
 
-- **Frontend**: React 
+- **Frontend**: React
 - **AI**: OpenAI API 
 - **Styling**: Tailwind CSS 
+- **Other Tools**: Vite
 
 ## Getting Started
 ```bash
