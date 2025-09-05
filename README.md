@@ -25,3 +25,12 @@ npm i
 npm run dev
 
 ```
+## AI Chat Assistant
+
+### Usage
+- Open the website.
+- Select the chat icon in the top-right corner.
+- Ask the AI Assistant for product recomendation, site navigation, or any general support.
+
+### Implementation
+Chat Assistant Component: [ai-chat-window.tsx](https://github.com/aditikagalkar/glam-gems-shop/blob/main/src/components/ui/ai-chat-window.tsx)
